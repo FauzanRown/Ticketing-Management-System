@@ -204,7 +204,8 @@ body {
 }
 
 .form-group label {
-  margin-bottom: 10px;
+  padding-bottom: 13px;
+  display: block;
   font-weight: 600;
   color: var(--dark);
   font-size: 1.05rem;
@@ -236,15 +237,6 @@ body {
 .form-group input:hover,
 .form-group select:hover {
   border-color: #93c5fd;
-}
-
-.form-group i {
-  position: absolute;
-  left: 15px;
-  bottom: 15px;
-  color: var(--primary);
-  font-size: 1.2rem;
-  z-index: 2;
 }
 
 .radio-group {
@@ -281,13 +273,6 @@ body {
   cursor: pointer;
 }
 
-.full-width {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
 button {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -299,9 +284,6 @@ button {
   cursor: pointer;
   transition: all 0.4s ease;
   box-shadow: 0 6px 15px rgba(30, 64, 175, 0.4);
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
   margin-top: 15px;
 }
 
@@ -315,21 +297,6 @@ button:active {
   transform: translateY(-2px);
 }
 
-button::after {
-  content: "🚂";
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-button:hover::after {
-  opacity: 1;
-  right: 25px;
-}
-
 /* Custom dropdown arrow */
 .form-group select {
   appearance: none;
@@ -337,15 +304,6 @@ button:hover::after {
   background-repeat: no-repeat;
   background-position: right 15px center;
   background-size: 20px;
-}
-
-@keyframes trainMove {
-  0% {
-    left: -100px;
-  }
-  100% {
-    left: calc(100% + 100px);
-  }
 }
 
 /* Responsive design */

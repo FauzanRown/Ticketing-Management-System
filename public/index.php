@@ -117,22 +117,24 @@
           <input type="number" id="jumlah" name="jumlah" placeholder="Jumlah tiket" min="1" max="10" required />
         </div>
 
-        <div class="form-group">
-          <label>Kategori</label>
-          <div class="radio-group">
-            <label>
-              <input type="radio" name="kategori" value="Dewasa" required />
-              Dewasa
-            </label>
-            <label>
-              <input type="radio" name="kategori" value="Anak" />
-              Anak
-            </label>
+        <div class="flex-button">
+          <div class="form-group">
+            <label>Kategori</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="kategori" value="Dewasa" required />
+                Dewasa
+              </label>
+              <label>
+                <input type="radio" name="kategori" value="Anak" />
+                Anak
+              </label>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group full-width">
-          <button type="submit"> Pesan Tiket</button>
+          <div class="form-group buttonpesan">
+            <button type="submit"> Pesan Tiket</button>
+          </div>
         </div>
       </form>
     </div>
