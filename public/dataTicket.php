@@ -11,13 +11,18 @@
 <body class="main-body">
   <aside class="sidebar">
     <div class="logo-section">
-      <img src="../image/logo.svg" alt="Logo" class="logo" />
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1e40af">
+          <path
+            d="M4 15.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2H7.5C6.12 19 5 17.88 5 16.5S6.12 14 7.5 14h7v-4H7.5C5.57 10 4 11.57 4 13.5S5.57 17 7.5 17h9c1.93 0 3.5-1.57 3.5-3.5S18.43 10 16.5 10H14V7h4v2h1.5c.83 0 1.5.67 1.5 1.5S20.33 12 19.5 12H18c-1.1 0-2 .9-2 2s.9 2 2 2h1.5c.83 0 1.5.67 1.5 1.5S20.33 19 19.5 19H18v2h-1.5l-2-2h-7l-2 2H6v-.5L7.5 17c-1.93 0-3.5-1.57-3.5-3.5V4H4v11.5z">
+          </path>
+        </svg>
+      </div>
       <div>
         <h1 class="title">Blibli Tiket</h1>
+        <h5>Murah, Aman, Cepat</h5>
       </div>
     </div>
-
-    <hr class="divider" />
 
     <div class="menu-section">
       <h2 class="menu-title">Menu Utama</h2>
@@ -32,7 +37,7 @@
           </div>
         </a>
 
-        <a href="./dataTicket.php" class="link-tombol">
+        <a href="../public/dataTicket.php" class="link-tombol">
           <div class="nav-tombol">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill="currentColor"
@@ -42,7 +47,7 @@
           </div>
         </a>
 
-        <a href="./dataTiket.html" class="link-tombol">
+        <a href="#" class="link-tombol">
           <div class="nav-tombol">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill="currentColor" d="M2 21v-2h20v2zm1-3v-7h3v7zm5 0V6h3v12zm5 0V9h3v9zm5 0V3h3v15z" />
@@ -51,7 +56,7 @@
           </div>
         </a>
 
-        <a href="./dataTiket.html" class="link-tombol">
+        <a href="#" class="link-tombol">
           <div class="nav-tombol">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill="currentColor"

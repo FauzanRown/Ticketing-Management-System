@@ -10,7 +10,6 @@
 :root {
   --primary: #1e40af;
   --secondary: #3b82f6;
-  --accent: #f97316;
   --light: #eff6ff;
   --dark: #1e293b;
   --success: #10b981;
@@ -27,7 +26,7 @@ body {
 
 /* Sidebar Styling */
 .sidebar {
-  width: 280px;
+  width: 300px;
   background: linear-gradient(160deg, #1e40af, #3b82f6);
   padding: 25px 15px;
   display: flex;
@@ -184,7 +183,7 @@ body {
   font-size: 2.2rem;
   position: relative;
   margin-bottom: 10px;
-  background: black;
+  background: linear-gradient(160deg, #1e40af, #3b82f6);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

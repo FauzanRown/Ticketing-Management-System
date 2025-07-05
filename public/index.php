@@ -24,12 +24,10 @@
       </div>
     </div>
 
-    <hr class="divider" />
-
     <div class="menu-section">
       <h2 class="menu-title">Menu Utama</h2>
       <nav class="menu-list">
-        <a href="#" class="link-tombol">
+        <a href="../public/index.php" class="link-tombol">
           <div class="nav-tombol">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill="currentColor"
@@ -39,7 +37,7 @@
           </div>
         </a>
 
-        <a href="#" class="link-tombol">
+        <a href="../public/dataTicket.php" class="link-tombol">
           <div class="nav-tombol">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill="currentColor"
