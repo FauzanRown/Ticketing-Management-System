@@ -187,7 +187,7 @@ body {
   border-radius: 8px;
 }
 
-.total-bayar .displaybayar {
+#displaybayar {
   font-weight: bold;
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -444,7 +444,7 @@ button:active {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
   color: #ffffff;
 }
 
@@ -514,6 +514,15 @@ button:active {
   background: #f3f4f6;
 }
 
+.logo-kai {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 160px;
+  height: auto;
+  opacity: 0.2;
+}
+
 .ticket-penumpang-row {
   display: flex;
   justify-content: space-between;
@@ -556,6 +565,7 @@ button:active {
   font-size: 0.85rem;
   color: #64748b;
   border-top: 1px solid #e2e8f0;
+  margin-bottom: 20px;
 }
 
 .ticket-penumpang-icon {
