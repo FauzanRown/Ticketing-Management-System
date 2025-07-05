@@ -29,7 +29,7 @@ function hitungTotal() {
   const total = harga * jumlah;
 
   // Update total di <span class="displaybayar">
-  const tampilkanHarga = document.querySelector(".displaybayar");
+  const tampilkanHarga = document.getElementById("displaybayar");
   tampilkanHarga.textContent = "Rp. " + total.toLocaleString("id-ID");
 }
 
