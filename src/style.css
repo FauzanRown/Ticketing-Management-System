@@ -1,0 +1,465 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary: #1e40af;
+  --secondary: #3b82f6;
+  --accent: #f97316;
+  --light: #eff6ff;
+  --dark: #1e293b;
+  --success: #10b981;
+  --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e40af);
+  min-height: 100vh;
+  display: flex;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(160deg, #1e40af, #3b82f6);
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 0 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background: var(--light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo img {
+  width: 70%;
+  height: auto;
+}
+
+.title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-section h5 {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 15px 0;
+}
+
+.menu-section {
+  flex-grow: 1;
+}
+
+.menu-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-tombol {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-tombol {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-tombol:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-tombol svg {
+  transition: all 0.3s ease;
+}
+
+.nav-tombol:hover svg {
+  transform: scale(1.1);
+  fill: white;
+}
+
+.nav-tombol p {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* Content Area Styling */
+.content {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--secondary),
+    var(--primary)
+  );
+  z-index: 2;
+}
+
+.card h1 {
+  text-align: center;
+  padding: 25px 20px;
+  color: var(--primary);
+  font-size: 2.2rem;
+  position: relative;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  border-radius: 2px;
+}
+
+/* Form Styling */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.form-group:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.form-group:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.form-group:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.form-group:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.form-group:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 1.05rem;
+  position: relative;
+  padding-left: 12px;
+}
+
+.form-group label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 15px;
+  padding-left: 45px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: var(--light);
+  transition: all 0.3s ease;
+  color: var(--dark);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  border-color: #93c5fd;
+}
+
+.form-group i {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  color: var(--primary);
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  padding: 5px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--dark);
+  transition: all 0.2s ease;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--light);
+  flex: 1;
+  justify-content: center;
+}
+
+.radio-group label:hover {
+  background: #dbeafe;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.radio-group input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  padding: 16px 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 15px rgba(30, 64, 175, 0.4);
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.6);
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+
+button:active {
+  transform: translateY(-2px);
+}
+
+button::after {
+  content: "🚂";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+button:hover::after {
+  opacity: 1;
+  right: 25px;
+}
+
+/* Custom dropdown arrow */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e40af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+}
+
+@keyframes trainMove {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: calc(100% + 100px);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 230px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .card h1 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .logo-section {
+    margin-bottom: 15px;
+  }
+
+  .menu-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-tombol {
+    padding: 12px 15px;
+    flex-direction: column;
+    text-align: center;
+    width: 120px;
+  }
+
+  .nav-tombol p {
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card h1 {
+    font-size: 1.7rem;
+    padding: 20px 15px;
+  }
+
+  button {
+    padding: 14px 40px;
+    font-size: 1rem;
+  }
+}

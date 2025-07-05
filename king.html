@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blibli Tiket - Eye-Catching Design</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary: #1e40af;
+        --secondary: #3b82f6;
+        --accent: #f97316;
+        --light: #eff6ff;
+        --dark: #1e293b;
+        --success: #10b981;
+        --card-bg: rgba(255, 255, 255, 0.95);
+        --sidebar-bg: linear-gradient(160deg, #1e40af, #3b82f6);
+      }
+
+      body {
+        background: linear-gradient(135deg, #0f172a, #1e40af);
+        min-height: 100vh;
+        display: flex;
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+
+      /* Sidebar Styling */
+      .sidebar {
+        width: 280px;
+        background: var(--sidebar-bg);
+        padding: 25px 15px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+        padding: 0 10px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        background: var(--light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .logo img {
+        width: 70%;
+        height: auto;
+      }
+
+      .title {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .logo-section h5 {
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 400;
+        font-size: 0.9rem;
+      }
+
+      .divider {
+        border: 0;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 15px 0;
+      }
+
+      .menu-section {
+        flex-grow: 1;
+      }
+
+      .menu-title {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .link-tombol {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .nav-tombol {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 14px 20px;
+        border-radius: 12px;
+        color: rgba(255, 255, 255, 0.85);
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-tombol:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(5px);
+        color: white;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .nav-tombol svg {
+        transition: all 0.3s ease;
+      }
+
+      .nav-tombol:hover svg {
+        transform: scale(1.1);
+        fill: white;
+      }
+
+      .nav-tombol p {
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
+
+      /* Content Area Styling */
+      .content {
+        flex-grow: 1;
+        padding: 30px;
+        overflow-y: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 800px;
+        background: var(--card-bg);
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          var(--secondary),
+          var(--primary)
+        );
+        z-index: 2;
+      }
+
+      .card h1 {
+        text-align: center;
+        padding: 25px 20px;
+        color: var(--primary);
+        font-size: 2.2rem;
+        position: relative;
+        margin-bottom: 10px;
+        background: linear-gradient(to right, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .card h1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+        border-radius: 2px;
+      }
+
+      /* Form Styling */
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        padding: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+        position: relative;
+        animation: fadeIn 0.5s ease-out;
+        animation-fill-mode: backwards;
+      }
+
+      .form-group:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .form-group:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .form-group:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .form-group:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .form-group:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .form-group:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: var(--dark);
+        font-size: 1.05rem;
+        position: relative;
+        padding-left: 12px;
+      }
+
+      .form-group label::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 15px;
+        padding-left: 45px;
+        font-size: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        background-color: var(--light);
+        transition: all 0.3s ease;
+        color: var(--dark);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+
+      .form-group input:hover,
+      .form-group select:hover {
+        border-color: #93c5fd;
+      }
+
+      .form-group i {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        color: var(--primary);
+        font-size: 1.2rem;
+        z-index: 2;
+      }
+
+      .radio-group {
+        display: flex;
+        gap: 20px;
+        padding: 5px;
+      }
+
+      .radio-group label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--dark);
+        transition: all 0.2s ease;
+        padding: 12px 20px;
+        border-radius: 10px;
+        background: var(--light);
+        flex: 1;
+        justify-content: center;
+      }
+
+      .radio-group label:hover {
+        background: #dbeafe;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .radio-group input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+
+      .full-width {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      button {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border: none;
+        padding: 16px 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0 6px 15px rgba(30, 64, 175, 0.4);
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+        margin-top: 15px;
+      }
+
+      button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(30, 64, 175, 0.6);
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      }
+
+      button:active {
+        transform: translateY(-2px);
+      }
+
+      button::after {
+        content: "🚂";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      button:hover::after {
+        opacity: 1;
+        right: 25px;
+      }
+
+      /* Custom dropdown arrow */
+      .form-group select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e40af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 20px;
+      }
+
+      /* Train animation */
+      .train-animation {
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 100px;
+        height: 80px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23f97316" d="M10,50 Q30,30 50,50 T90,50 L80,70 L20,70 Z"/><circle cx="25" cy="70" r="10" fill="%231e293b"/><circle cx="75" cy="70" r="10" fill="%231e293b"/></svg>')
+          no-repeat;
+        animation: trainMove 20s linear infinite;
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      @keyframes trainMove {
+        0% {
+          left: -100px;
+        }
+        100% {
+          left: calc(100% + 100px);
+        }
+      }
+
+      /* Responsive design */
+      @media (max-width: 992px) {
+        .sidebar {
+          width: 230px;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+
+        .card h1 {
+          font-size: 1.9rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          padding: 15px;
+        }
+
+        .logo-section {
+          margin-bottom: 15px;
+        }
+
+        .menu-list {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .nav-tombol {
+          padding: 12px 15px;
+          flex-direction: column;
+          text-align: center;
+          width: 120px;
+        }
+
+        .nav-tombol p {
+          font-size: 0.9rem;
+        }
+
+        .content {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .radio-group {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .card h1 {
+          font-size: 1.7rem;
+          padding: 20px 15px;
+        }
+
+        button {
+          padding: 14px 40px;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="main-body">
+    <!-- Train animation elements -->
+    <div class="train-animation"></div>
+    <div class="train-animation" style="top: 30%; animation-delay: -8s"></div>
+    <div class="train-animation" style="top: 70%; animation-delay: -15s"></div>
+
+    <aside class="sidebar">
+      <div class="logo-section">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#1e40af"
+          >
+            <path
+              d="M4 15.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2H7.5C6.12 19 5 17.88 5 16.5S6.12 14 7.5 14h7v-4H7.5C5.57 10 4 11.57 4 13.5S5.57 17 7.5 17h9c1.93 0 3.5-1.57 3.5-3.5S18.43 10 16.5 10H14V7h4v2h1.5c.83 0 1.5.67 1.5 1.5S20.33 12 19.5 12H18c-1.1 0-2 .9-2 2s.9 2 2 2h1.5c.83 0 1.5.67 1.5 1.5S20.33 19 19.5 19H18v2h-1.5l-2-2h-7l-2 2H6v-.5L7.5 17c-1.93 0-3.5-1.57-3.5-3.5V4H4v11.5z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="title">Blibli Tiket</h1>
+          <h5>Solusi Lulus Responsi</h5>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="menu-section">
+        <h2 class="menu-title">Menu Utama</h2>
+        <nav class="menu-list">
+          <a href="#" class="link-tombol">
+            <div class="nav-tombol">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4zm1 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                />
+              </svg>
+              <p>Tambah Tiket</p>
+            </div>
+          </a>
+
+          <a href="#" class="link-tombol">
+            <div class="nav-tombol">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M4 20q-.825 0-1.412-.587T2 18v-3.375q0-.275.175-.475t.45-.25q.6-.2.988-.725T4 12t-.387-1.175t-.988-.725q-.275-.05-.45-.25T2 9.375V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v3.375q0 .275-.175.475t-.45.25q-.6.2-.987.725T20 12t.388 1.175t.987.725q.275.05.45.25t.175.475V18q0 .825-.587 1.413T20 20zm5.5-3h5.05q.2 0 .325-.125T15 16.55v-.275q0-.125-.062-.237t-.188-.163L14 15.5q.825 0 1.413-.587T16 13.5V9q0-1.075-.925-1.537T12 7q-2.075 0-3.037.475T8 9v4.5q0 .825.588 1.413T10 15.5l-.725.35q-.125.05-.2.175T9 16.3v.2q0 .2.15.35t.35.15m.75-2.5q-.325 0-.537-.213T9.5 13.75t.213-.537t.537-.213t.538.213t.212.537t-.213.538t-.537.212m3.5 0q-.325 0-.537-.213T13 13.75t.213-.537t.537-.213t.538.213t.212.537t-.213.538t-.537.212M9.5 12V9h5v3z"
+                />
+              </svg>
+              <p>Data Tiket</p>
+            </div>
+          </a>
+
+          <a href="#" class="link-tombol">
+            <div class="nav-tombol">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M2 21v-2h20v2zm1-3v-7h3v7zm5 0V6h3v12zm5 0V9h3v9zm5 0V3h3v15z"
+                />
+              </svg>
+              <p>Statistik Penjualan</p>
+            </div>
+          </a>
+
+          <a href="#" class="link-tombol">
+            <div class="nav-tombol">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m16 21l-.3-1.5q-.3-.125-.562-.262T14.6 18.9l-1.45.45l-1-1.7l1.15-1q-.05-.35-.05-.65t.05-.65l-1.15-1l1-1.7l1.45.45q.275-.2.538-.337t.562-.263L16 11h2l.3 1.5q.3.125.563.275t.537.375l1.45-.5l1 1.75l-1.15 1q.05.3.05.625t-.05.625l1.15 1l-1 1.7l-1.45-.45q-.275.2-.537.338t-.563.262L18 21zM2 20v-2.8q0-.825.425-1.55t1.175-1.1q1.275-.65 2.875-1.1T10 13h.35q.15 0 .3.05q-.725 1.8-.6 3.575T11.25 20zm15-2q.825 0 1.413-.587T19 16t-.587-1.412T17 14t-1.412.588T15 16t.588 1.413T17 18m-7-6q-1.65 0-2.825-1.175T6 8t1.175-2.825T10 4t2.825 1.175T14 8t-1.175 2.825T10 12"
+                />
+              </svg>
+              <p>Profile</p>
+            </div>
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="content">
+      <div class="card">
+        <h1>Form Pemesanan Tiket</h1>
+        <form class="form-grid">
+          <div class="form-group">
+            <label for="nama">Nama Pelanggan</label>
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan nama lengkap"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="tanggal">Tanggal Pemesanan</label>
+            <i class="fas fa-calendar"></i>
+            <input type="date" id="tanggal" name="tanggal" required />
+          </div>
+
+          <div class="form-group">
+            <label for="namaKereta">Nama Kereta</label>
+            <i class="fas fa-train"></i>
+            <select name="namaKereta" id="namaKereta" required>
+              <option value="" disabled selected hidden>
+                Pilih Nama Kereta Api
+              </option>
+              <option value="Argo Bromo">Argo Bromo</option>
+              <option value="Taksaka">Taksaka</option>
+              <option value="Lodaya">Lodaya</option>
+              <option value="Argo Parahyangan">Argo Parahyangan</option>
+              <option value="Serayu">Serayu</option>
+              <option value="Matarmaja">Matarmaja</option>
+              <option value="Gajayana">Gajayana</option>
+              <option value="Sancaka">Sancaka</option>
+              <option value="Singasari">Singasari</option>
+              <option value="Majapahit">Majapahit</option>
+              <option value="Argo Wilis">Argo Wilis</option>
+              <option value="Turangga">Turangga</option>
+              <option value="Jayakarta">Jayakarta</option>
+              <option value="Kutojaya">Kutojaya</option>
+              <option value="Tawang Jaya">Tawang Jaya</option>
+              <option value="Kaligung">Kaligung</option>
+              <option value="Bogowonto">Bogowonto</option>
+              <option value="Progo">Progo</option>
+              <option value="Menoreh">Menoreh</option>
+              <option value="Senja Utama">Senja Utama</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="jumlah">Jumlah Tiket</label>
+            <i class="fas fa-ticket-alt"></i>
+            <input
+              type="number"
+              id="jumlah"
+              name="jumlah"
+              placeholder="Jumlah tiket"
+              min="1"
+              max="10"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Kategori</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="kategori" value="Dewasa" required />
+                Dewasa
+              </label>
+              <label>
+                <input type="radio" name="kategori" value="Anak" />
+                Anak
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <button type="submit">
+              <i class="fas fa-check-circle"></i> Pesan Tiket
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Set minimum date to today
+      document.getElementById("tanggal").min = new Date()
+        .toISOString()
+        .split("T")[0];
+
+      // Add animation to buttons
+      document.querySelectorAll(".nav-tombol").forEach((button) => {
+        button.addEventListener("mouseenter", function () {
+          this.style.transform = "translateX(5px)";
+        });
+
+        button.addEventListener("mouseleave", function () {
+          this.style.transform = "translateX(0)";
+        });
+      });
+
+      // Add animation to form submit button
+      document
+        .querySelector("button")
+        .addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-5px)";
+        });
+
+      document
+        .querySelector("button")
+        .addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+        });
+    </script>
+  </body>
+</html>
