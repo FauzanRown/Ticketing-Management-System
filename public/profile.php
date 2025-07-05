@@ -71,16 +71,62 @@
 
   <div class="content-card">
     <div class="card-profile-header">
-      <div class="profile-image">
-        <img src="../image/profile.png" alt="">
+      <div class="foto-profile">
+        <img src="../image/profile.png" style="width: 140px; border-radius: 50%;" alt="">
       </div>
-      <h1 style="text-align: center; padding-top: 20px; padding-bottom: 7px;">Muhammad Fauzan Anwar</h1>
+      <h1 style="text-align: center; padding-top: 10px; padding-bottom: 7px;">Muhammad Fauzan Anwar</h1>
       <p>2400018012 | Teknik Informatika</p>
     </div>
 
     <div class="card-profile-body">
+
+      <div class="card-profile-information">
+        <div class="information-profile-detail">
+          <div class="info-profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
+              <path fill="#183bae"
+                d="M21 16v-5.9l-8.05 4.375q-.45.25-.95.25t-.95-.25l-8.45-4.6q-.275-.15-.388-.375T2.1 9t.113-.5t.387-.375l8.45-4.6q.225-.125.463-.188T12 3.275t.488.063t.462.187l9.525 5.2q.25.125.388.363T23 9.6V16q0 .425-.288.713T22 17t-.712-.288T21 16m-9.95 4.475l-5-2.7q-.5-.275-.775-.75T5 16v-3.8l6.05 3.275q.45.25.95.25t.95-.25L19 12.2V16q0 .55-.275 1.025t-.775.75l-5 2.7q-.225.125-.462.188t-.488.062t-.488-.062t-.462-.188" />
+            </svg>
+          </div>
+          <div class="info-text">
+            <h4>Pendidikan</h4>
+            <p>S1 Teknik Informatika</p>
+          </div>
+        </div>
+
+        <div class="information-profile-detail">
+          <div class="info-profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                <path fill="#183bae"
+                  d="m12.67 2.217l8.5 4.75A1.5 1.5 0 0 1 22 8.31v1.44c0 .69-.56 1.25-1.25 1.25H20v8h1a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h1v-8h-.75C2.56 11 2 10.44 2 9.75V8.31c0-.522.27-1.002.706-1.274l8.623-4.819a1.5 1.5 0 0 1 1.342 0ZM17 11H7v8h2v-6h2v6h2v-6h2v6h2zm-5-5a1 1 0 1 0 0 2a1 1 0 0 0 0-2" />
+              </g>
+            </svg>
+          </div>
+          <div class="info-text">
+            <h4>Universitas</h4>
+            <p>Universitas Ahmad Dahlan Yogyakarta</p>
+          </div>
+        </div>
+
+        <div class="information-profile-detail">
+          <div class="info-profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
+              <path fill="#183bae"
+                d="m8.825 12l1.475-1.475q.3-.3.3-.7t-.3-.7t-.712-.3t-.713.3L6.7 11.3q-.15.15-.213.325T6.425 12t.062.375t.213.325l2.175 2.175q.3.3.713.3t.712-.3t.3-.7t-.3-.7zm6.35 0L13.7 13.475q-.3.3-.3.7t.3.7t.713.3t.712-.3L17.3 12.7q.15-.15.213-.325t.062-.375t-.062-.375t-.213-.325l-2.175-2.175q-.15-.15-.337-.225t-.376-.075t-.375.075t-.337.225q-.3.3-.3.7t.3.7zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21z" />
+            </svg>
+          </div>
+          <div class="info-text">
+            <h4>Project</h4>
+            <p>Project Responsi Praktikum Pemrograman WEB 2025</p>
+          </div>
+        </div>
+      </div>
+
       <div class="developer-social">
-        <a href="#" class="social-link">
+        <a href="https://www.youtube.com/@fauzanrown" target="_blank" class="social-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" fill-rule="evenodd">
               <path
@@ -90,7 +136,7 @@
             </g>
           </svg>
         </a>
-        <a href="#" class="social-link">
+        <a href="https://www.instagram.com/zananwar_/" target="_blank" class="social-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" fill-rule="evenodd">
               <path
@@ -100,7 +146,7 @@
             </g>
           </svg>
         </a>
-        <a href="#" class="social-link">
+        <a href="https://github.com/FauzanRown" target="_blank" class="social-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="none">
               <path
@@ -110,7 +156,7 @@
             </g>
           </svg>
         </a>
-        <a href="#" class="social-link">
+        <a href="https://www.tiktok.com/id-ID/" target="_blank" class="social-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" fill-rule="evenodd">
               <path
