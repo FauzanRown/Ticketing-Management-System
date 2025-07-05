@@ -70,7 +70,8 @@
   </aside>
 
   <div class="content-card">
-    <h1 style="text-align: center ; color: #ffff;">Daftar Tiket</h1>
+    <h1 style="text-align: center ; color: #ffff; padding-top: 20px">DAFTAR TIKET TERSEDIA</h1>
+    <p style="text-align: center ; color: #ffff;">Tiket Kereta Api Yang Tersedia</p>
     <div id="daftartiket" class="ticket-container"></div>
   </div>
 </body>

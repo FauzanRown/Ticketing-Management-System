@@ -27,7 +27,7 @@ body {
 /* Sidebar Styling */
 .sidebar {
   width: 300px;
-  background: linear-gradient(160deg, #1e40af, #3b82f6);
+  background: linear-gradient(160deg, #1e40af, #2e69c9);
   padding: 25px 15px;
   display: flex;
   flex-direction: column;
@@ -159,7 +159,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  display: block; /* atau hilangkan saja baris ini */
+  display: block;
 }
 
 .card {
@@ -343,7 +343,7 @@ button:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2563eb;
+  background: linear-gradient(160deg, #1e40af, #3b82f6);
   color: white;
   padding: 10px;
   border-radius: 6px;
@@ -361,8 +361,8 @@ button:active {
 }
 
 .ticket-label {
-  background-color: white;
-  color: #2563eb;
+  background-color: #f97316;
+  color: #ffffff;
   font-weight: bold;
   padding: 3px 8px;
   border-radius: 50px;
