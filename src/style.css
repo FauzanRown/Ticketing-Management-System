@@ -85,6 +85,10 @@ body {
   flex-grow: 1;
 }
 
+.menu-section h2 {
+  margin-top: 20px;
+}
+
 .menu-title {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.1rem;
@@ -148,6 +152,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.content-card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: block; /* atau hilangkan saja baris ini */
 }
 
 .card {
@@ -303,6 +315,92 @@ button:active {
   background-repeat: no-repeat;
   background-position: right 15px center;
   background-size: 20px;
+}
+
+/* Styling for datTicket */
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.ticket-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.ticket-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2563eb;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.ticket-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ticket-code {
+  font-size: 12px;
+  color: #e0e7ff;
+}
+
+.ticket-label {
+  background-color: white;
+  color: #2563eb;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.ticket-body {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.ticket-price {
+  color: green;
+  font-weight: bold;
+}
+
+.ticket-footer {
+  margin-top: 12px;
+  background-color: #f3f4f6;
+  text-align: center;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.ticket-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 /* Responsive design */

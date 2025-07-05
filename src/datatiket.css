@@ -249,10 +249,9 @@ h1 {
 }
 
 .ticket-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 20px;
-  justify-content: center;
-  margin-top: 20px;
+  background-color: #e0e7ff;
 }

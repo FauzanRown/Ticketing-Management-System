@@ -69,8 +69,8 @@
     </div>
   </aside>
 
-  <div class="content">
-    <h1>Daftar Tiket</h1>
+  <div class="content-card">
+    <h1 style="text-align: center ; color: #ffff;">Daftar Tiket</h1>
     <div id="daftartiket" class="ticket-container"></div>
   </div>
 </body>
