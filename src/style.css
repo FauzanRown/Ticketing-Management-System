@@ -582,6 +582,62 @@ button:active {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Profile Style */
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.card-profile-header {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(130deg, #1e40af, #3b82f6);
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-profile-body {
+  background: var(--light);
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.developer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #3b82f6;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.social-link:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
 /* Responsive design */
 @media (max-width: 992px) {
   .sidebar {
