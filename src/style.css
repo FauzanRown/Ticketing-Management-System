@@ -173,6 +173,28 @@ body {
   animation: fadeIn 0.8s ease-out;
 }
 
+.full-width {
+  grid-column: 1 / -1; /* Artinya: mulai dari kolom pertama sampai terakhir */
+}
+
+.total-bayar {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px dashed #e0e0e0;
+  border-radius: 8px;
+}
+
+.total-bayar .displaybayar {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  padding-top: 4px;
+  color: rgb(0, 175, 0);
+}
+
 .card::before {
   content: "";
   position: absolute;
@@ -264,7 +286,7 @@ body {
   font-weight: 500;
   color: var(--dark);
   transition: all 0.2s ease;
-  padding: 12px 20px;
+  padding: 12px 10px;
   border-radius: 10px;
   background: var(--light);
   flex: 1;
@@ -284,9 +306,15 @@ body {
   cursor: pointer;
 }
 
+.tombol-pesan {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 button {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 16px 50px;
   font-size: 1.1rem;
@@ -295,7 +323,7 @@ button {
   cursor: pointer;
   transition: all 0.4s ease;
   box-shadow: 0 6px 15px rgba(30, 64, 175, 0.4);
-  margin-top: 15px;
+  margin: 0 auto;
 }
 
 button:hover {
@@ -372,6 +400,11 @@ button:active {
 .ticket-body {
   font-size: 14px;
   margin-top: 10px;
+  color: #374151;
+  line-height: 1.5;
+  background-color: #f3f4f6;
+  padding: 10px;
+  border-radius: 6px;
 }
 
 .ticket-row {
@@ -383,6 +416,47 @@ button:active {
 .ticket-price {
   color: green;
   font-weight: bold;
+}
+
+.ticket-detail {
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.ticket-detail strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.ticket-price-penumpang {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #10b981;
+  text-align: center;
+  padding: 15px 0;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.card-penumpang-title {
+  font-size: 1.9rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.ticket-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.ticket-code {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 .ticket-footer {
@@ -401,6 +475,101 @@ button:active {
   gap: 20px;
   padding: 20px;
   margin-top: 20px;
+}
+
+/* Buat Tiket Penumpang */
+.ticket-penumpang-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.ticket-penumpang-header {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-penumpang-code {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.ticket-penumpang-label {
+  background: #f97316;
+  color: white;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ticket-penumpang-body {
+  padding: 20px;
+  position: relative;
+  background: #f3f4f6;
+}
+
+.ticket-penumpang-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.ticket-penumpang-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.ticket-penumpang-detail {
+  font-size: 0.95rem;
+  color: black;
+}
+
+.ticket-penumpang-detail strong {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.ticket-penumpang-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #10b981;
+  text-align: center;
+  padding: 15px 0;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.ticket-penumpang-footer {
+  background: #f8fafc;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  border-top: 1px solid #e2e8f0;
+}
+
+.ticket-penumpang-icon {
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive design */

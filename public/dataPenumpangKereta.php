@@ -1,42 +1,14 @@
-<!DOCTYPE html>
-
 <?php
-session_start(); // ← paling atas
-
-require '../controller/fungsiJumlah.php'; // panggil fungsi hitung
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nama = htmlspecialchars($_POST['nama']);
-    $tanggal = htmlspecialchars($_POST['tanggal']);
-    $namaKereta = htmlspecialchars($_POST['namaKereta']);
-    $jumlahTiket = (int)$_POST['jumlah'];
-    $kategori = htmlspecialchars($_POST['kategori']);
-
-    $totalHarga = hitungTotalHarga($jumlahTiket, $kategori);
-    $waktuPemesanan = date('Y-m-d H:i:s');
-
-    if (!isset($_SESSION['data_tiket'])) {
-        $_SESSION['data_tiket'] = [];
-    }
-
-    $_SESSION['data_tiket'][] = [
-        'nama' => $nama,
-        'tanggal' => $tanggal,
-        'namaKereta' => $namaKereta,
-        'jumlah' => $jumlahTiket,
-        'kategori' => $kategori,
-        'total' => $totalHarga,
-        'waktuPemesanan' => $waktuPemesanan
-    ];
-}
+session_start();
 ?>
 
+<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blibli Tiket - Eye-Catching Design</title>
+  <title>Blibli Tiket</title>
   <link rel="stylesheet" href="../src/style.css" />
 </head>
 
@@ -101,82 +73,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
   </aside>
 
-  <div class="content">
-    <div class="card">
-      <h1>Form Pemesanan Tiket</h1>
-      <form class="form-grid" method="POST">
+  <div class="content-card">
+    <div class="card-penumpang">
+      <h1 class="card-penumpang-title">DATA PEMBELIAN TIKET PENUMPANG</h1>
 
-        <div class="form-group">
-          <label for="nama">Nama Pelanggan</label>
-          <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required />
-        </div>
+      <?php if (!empty($_SESSION['data_tiket'])): ?>
+      <?php foreach ($_SESSION['data_tiket'] as $index => $tiket): ?>
 
-        <div class="form-group">
-          <label for="tanggal">Tanggal Pemesanan</label>
-          <input type="date" id="tanggal" name="tanggal" required />
-        </div>
-
-        <div class="form-group">
-          <label for="namaKereta">Nama Kereta</label>
-          <select name="namaKereta" id="namaKereta" required>
-            <option value="" disabled selected hidden>Pilih Nama Kereta Api</option>
-            <option value="Argo Bromo">Argo Bromo</option>
-            <option value="Taksaka">Taksaka</option>
-            <option value="Lodaya">Lodaya</option>
-            <option value="Argo Wilis">Argo Wilis</option>
-            <option value="Serayu">Serayu</option>
-            <option value="Matarmaja">Matarmaja</option>
-            <option value="Gajayana">Gajayana</option>
-            <option value="Sancaka">Sancaka</option>
-            <option value="Singasari">Singasari</option>
-            <option value="Majapahit">Majapahit</option>
-            <option value="Argo Wilis">Argo Wilis</option>
-            <option value="Turangga">Turangga</option>
-            <option value="Jayakarta">Jayakarta</option>
-            <option value="Kutojaya">Kutojaya</option>
-            <option value="Tawang Jaya">Tawang Jaya</option>
-            <option value="Kaligung">Kaligung</option>
-            <option value="Bogowonto">Bogowonto</option>
-            <option value="Progo">Progo</option>
-            <option value="Menoreh">Menoreh</option>
-            <option value="Senja Utama">Senja Utama</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="jumlah">Jumlah Tiket</label>
-          <input type="number" id="jumlah" name="jumlah" placeholder="Jumlah tiket" min="1" max="10" required />
-        </div>
-
-        <!-- Radio group, langsung di dalam grid -->
-        <div class="form-group full-width">
-          <label>Kategori</label>
-          <div class="radio-group">
-            <label>
-              <input type="radio" name="kategori" value="Dewasa" required />
-              Dewasa
-            </label>
-            <label>
-              <input type="radio" name="kategori" value="Anak" />
-              Anak
-            </label>
+      <div class="display-ticket">
+        <div class="ticket-penumpang-header">
+          <div>
+            <div class="ticket-penumpang-title"><?= $tiket['namaKereta'] ?></div>
+            <div class="ticket-penumpang-code"> Kode Tiket : KAI 100<?= $index + 1 ?></div>
           </div>
+          <div class="ticket-penumpang-label"><?= $tiket['kategori'] ?></div>
         </div>
 
-        <!-- Total bayar -->
-        <div class="total-bayar full-width">
-          <h4>Total Yang Harus Dibayar</h4>
-          <span class="displaybayar">Rp 0</span>
+        <div class="ticket-penumpang-body">
+          <div class="ticket-penumpang-icon">
+            <i class="fas fa-train"></i>
+          </div>
+
+          <div class="ticket-penumpang-row">
+            <div class="ticket-penumpang-detail">
+              <strong>Nama:</strong> <?= $tiket['nama'] ?>
+            </div>
+          </div>
+
+          <div class="ticket-penumpang-row">
+            <div class="ticket-penumpang-detail">
+              <strong>Tanggal:</strong> <?= $tiket['tanggal'] ?>
+            </div>
+          </div>
+
+          <div class="ticket-penumpang-row">
+            <div class="ticket-penumpang-detail"><strong>Jumlah:</strong> <?= $tiket['jumlah'] ?></div>
+          </div>
+
+          <div class="ticket-penumpang-price">Rp <?= number_format($tiket['total'], 0, ',', '.') ?></div>
         </div>
 
-        <!-- Tombol -->
-        <div class=" full-width tombol-pesan">
-          <button type="submit"> Pesan Tiket</button>
+        <div class="ticket-penumpang-footer">
+          <div>Silahkan Tunjukan Tiket Ini Kepada Petugas Sebelum Melakukan Perjalanan</div>
+          <div>Waktu Pemesanan Ticket : <?= $tiket['tanggal'] ?> </div>
         </div>
-      </form>
+        <?php endforeach; ?>
+        <?php else: ?>
+        <p>Belum ada data pemesanan.</p>
+        <?php endif; ?>
+      </div>
     </div>
-  </div>
-
 </body>
+
+<script src="../js/dataTicket.js"></script>
 
 </html>

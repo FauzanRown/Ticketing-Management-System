@@ -2,7 +2,7 @@ const dataTiket = [
   ["Argo Bromo", "Surabaya", "06:00", 150000],
   ["Taksaka", "Yogyakarta", "07:30", 200000],
   ["Lodaya", "Bandung", "08:15", 170000],
-  ["Argo Parahyangan", "Jakarta", "05:45", 180000],
+  ["Argo Wilis", "Jakarta", "05:45", 180000],
   ["Serayu", "Purwokerto", "10:00", 130000],
   ["Matarmaja", "Malang", "11:20", 90000],
   ["Gajayana", "Blitar", "09:00", 160000],
