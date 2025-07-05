@@ -6,28 +6,28 @@ session_start(); // ← paling atas
 require '../controller/fungsiJumlah.php'; // panggil fungsi hitung
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nama = htmlspecialchars($_POST['nama']);
-    $tanggal = htmlspecialchars($_POST['tanggal']);
-    $namaKereta = htmlspecialchars($_POST['namaKereta']);
-    $jumlahTiket = (int)$_POST['jumlah'];
-    $kategori = htmlspecialchars($_POST['kategori']);
+  $nama = htmlspecialchars($_POST['nama']);
+  $tanggal = htmlspecialchars($_POST['tanggal']);
+  $namaKereta = htmlspecialchars($_POST['namaKereta']);
+  $jumlahTiket = (int)$_POST['jumlah'];
+  $kategori = htmlspecialchars($_POST['kategori']);
 
-    $totalHarga = hitungTotalHarga($jumlahTiket, $kategori);
-    $waktuPemesanan = date('Y-m-d H:i:s');
+  $totalHarga = hitungTotalHarga($jumlahTiket, $kategori);
+  $waktuPemesanan = date('Y-m-d H:i:s');
 
-    if (!isset($_SESSION['data_tiket'])) {
-        $_SESSION['data_tiket'] = [];
-    }
+  if (!isset($_SESSION['data_tiket'])) {
+    $_SESSION['data_tiket'] = [];
+  }
 
-    $_SESSION['data_tiket'][] = [
-        'nama' => $nama,
-        'tanggal' => $tanggal,
-        'namaKereta' => $namaKereta,
-        'jumlah' => $jumlahTiket,
-        'kategori' => $kategori,
-        'total' => $totalHarga,
-        'waktuPemesanan' => $waktuPemesanan
-    ];
+  $_SESSION['data_tiket'][] = [
+    'nama' => $nama,
+    'tanggal' => $tanggal,
+    'namaKereta' => $namaKereta,
+    'jumlah' => $jumlahTiket,
+    'kategori' => $kategori,
+    'total' => $totalHarga,
+    'waktuPemesanan' => $waktuPemesanan
+  ];
 }
 ?>
 
@@ -120,26 +120,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <label for="namaKereta">Nama Kereta</label>
           <select name="namaKereta" id="namaKereta" required>
             <option value="" disabled selected hidden>Pilih Nama Kereta Api</option>
-            <option value="150000">Argo Bromo</option>
-            <option value="200000">Taksaka</option>
-            <option value="170000">Lodaya</option>
-            <option value="180000">Argo Wilis (Jakarta)</option>
-            <option value="130000">Serayu</option>
-            <option value="90000">Matarmaja</option>
-            <option value="160000">Gajayana</option>
-            <option value="140000">Sancaka</option>
-            <option value="120000">Singasari</option>
-            <option value="110000">Majapahit</option>
-            <option value="190000">Argo Wilis (Surabaya)</option>
-            <option value="150000">Turangga</option>
-            <option value="135000">Jayakarta</option>
-            <option value="100000">Kutojaya</option>
-            <option value="115000">Tawang Jaya</option>
-            <option value="95000">Kaligung</option>
-            <option value="105000">Bogowonto</option>
-            <option value="98000">Progo</option>
-            <option value="110000">Menoreh</option>
-            <option value="125000">Senja Utama</option>
+            <option value="Argo Bromo">Argo Bromo</option>
+            <option value="Taksaka">Taksaka</option>
+            <option value="Lodaya">Lodaya</option>
+            <option value="Argo Wilis (Jakarta)">Argo Wilis (Jakarta)</option>
+            <option value="Serayu">Serayu</option>
+            <option value="Matarmaja">Matarmaja</option>
+            <option value="Gajayana">Gajayana</option>
+            <option value="Sancaka">Sancaka</option>
+            <option value="Singasari">Singasari</option>
+            <option value="Majapahit">Majapahit</option>
+            <option value="Argo Wilis (Surabaya)">Argo Wilis (Surabaya)</option>
+            <option value="Turangga">Turangga</option>
+            <option value="Jayakarta">Jayakarta</option>
+            <option value="Kutojaya">Kutojaya</option>
+            <option value="Tawang Jaya">Tawang Jaya</option>
+            <option value="Kaligung">Kaligung</option>
+            <option value="Bogowonto">Bogowonto</option>
+            <option value="Progo">Progo</option>
+            <option value="Menoreh">Menoreh</option>
+            <option value="Senja Utama">Senja Utama</option>
           </select>
         </div>
 

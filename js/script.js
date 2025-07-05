@@ -1,1 +1,0 @@
-import dataTiketKereta from "./dataTicket";

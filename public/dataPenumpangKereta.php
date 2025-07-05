@@ -107,18 +107,18 @@ session_start();
 
           <div class="ticket-penumpang-row">
             <div class="ticket-penumpang-detail">
-              <strong>Nama:</strong> <?= $tiket['nama'] ?>
+              <strong>Nama Penumpang :</strong> <?= $tiket['nama'] ?>
             </div>
           </div>
 
           <div class="ticket-penumpang-row">
             <div class="ticket-penumpang-detail">
-              <strong>Tanggal:</strong> <?= $tiket['tanggal'] ?>
+              <strong>Tanggal Pemesanan:</strong> <?= $tiket['tanggal'] ?>
             </div>
           </div>
 
           <div class="ticket-penumpang-row">
-            <div class="ticket-penumpang-detail"><strong>Jumlah:</strong> <?= $tiket['jumlah'] ?></div>
+            <div class="ticket-penumpang-detail"><strong>Jumlah Tiket :</strong> <?= $tiket['jumlah'] ?></div>
           </div>
 
           <div class="ticket-penumpang-price">Rp <?= number_format($tiket['total'], 0, ',', '.') ?></div>
@@ -126,7 +126,7 @@ session_start();
 
         <div class="ticket-penumpang-footer">
           <div>Silahkan Tunjukan Tiket Ini Kepada Petugas Sebelum Melakukan Perjalanan</div>
-          <div>Waktu Pemesanan Ticket : <?= $tiket['tanggal'] ?> </div>
+          <div>Terima Kasih Telah Memilih Layanan Jasa PT. Kereta Api Indonesia</div>
         </div>
         <?php endforeach; ?>
         <?php else: ?>
