@@ -77,19 +77,16 @@
       <form class="form-grid">
         <div class="form-group">
           <label for="nama">Nama Pelanggan</label>
-          <i class="fas fa-user"></i>
           <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required />
         </div>
 
         <div class="form-group">
           <label for="tanggal">Tanggal Pemesanan</label>
-          <i class="fas fa-calendar"></i>
           <input type="date" id="tanggal" name="tanggal" required />
         </div>
 
         <div class="form-group">
           <label for="namaKereta">Nama Kereta</label>
-          <i class="fas fa-train"></i>
           <select name="namaKereta" id="namaKereta" required>
             <option value="" disabled selected hidden>Pilih Nama Kereta Api</option>
             <option value="Argo Bromo">Argo Bromo</option>
@@ -117,7 +114,6 @@
 
         <div class="form-group">
           <label for="jumlah">Jumlah Tiket</label>
-          <i class="fas fa-ticket-alt"></i>
           <input type="number" id="jumlah" name="jumlah" placeholder="Jumlah tiket" min="1" max="10" required />
         </div>
 
@@ -136,7 +132,7 @@
         </div>
 
         <div class="form-group full-width">
-          <button type="submit"><i class="fas fa-check-circle"></i> Pesan Tiket</button>
+          <button type="submit"> Pesan Tiket</button>
         </div>
       </form>
     </div>
