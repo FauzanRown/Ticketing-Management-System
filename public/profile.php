@@ -120,15 +120,9 @@
           </div>
           <div class="info-text">
             <h4>Project</h4>
-            <p>Project Responsi Praktikum <br> Pemrograman WEB 2025</p>
+            <p>Project Responsi Praktikum Pemrograman WEB 2025</p>
           </div>
         </div>
-      </div>
-
-      <div>
-        <p style="text-align: center; padding-bottom: 10px; font-style: italic;">"Jadilah lentera: semakin terang apimu,
-          semakin
-          banyak jalan yang kau terangi untuk orang lain."</p>
       </div>
 
       <div class="developer-social">
@@ -172,8 +166,6 @@
             </g>
           </svg>
         </a>
-
-
       </div>
     </div>
 

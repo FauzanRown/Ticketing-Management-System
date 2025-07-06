@@ -649,7 +649,7 @@ button:active {
 .information-profile-detail {
   border: #d8e3fe 1px solid;
   border-radius: 12px;
-  width: 700px;
+  width: 500px;
   display: flex;
   flex-direction: row;
   align-items: center;
