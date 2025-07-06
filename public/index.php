@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 
 <?php
-session_start(); // ← paling atas
+session_start(); // Jangan lupa selalu di paling atas
 
-require '../controller/fungsiJumlah.php'; // panggil fungsi hitung
+// Fungsi PHP untuk menghitung total harga berdasarkan nama kereta
+function hitungTotalHarga($namaKereta, $jumlahTiket) {
+    $hargaTiket = [
+        "Argo Bromo" => 150000,
+        "Taksaka" => 200000,
+        "Lodaya" => 170000,
+        "Argo Wilis (Jakarta)" => 180000,
+        "Serayu" => 130000,
+        "Matarmaja" => 90000,
+        "Gajayana" => 160000,
+        "Sancaka" => 140000,
+        "Singasari" => 120000,
+        "Majapahit" => 110000,
+        "Argo Wilis (Surabaya)" => 190000,
+        "Turangga" => 150000,
+        "Jayakarta" => 135000,
+        "Kutojaya" => 100000,
+        "Tawang Jaya" => 115000,
+        "Kaligung" => 95000,
+        "Bogowonto" => 105000,
+        "Progo" => 98000,
+        "Menoreh" => 110000,
+        "Senja Utama" => 125000,
+    ];
 
+    // Ambil harga dari nama kereta, jika tidak ada default 0
+    $harga = $hargaTiket[$namaKereta] ?? 0;
+
+    // Hitung total
+    return $harga * $jumlahTiket;
+}
+
+// Proses form saat POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $nama = htmlspecialchars($_POST['nama']);
-  $tanggal = htmlspecialchars($_POST['tanggal']);
-  $namaKereta = htmlspecialchars($_POST['namaKereta']);
-  $jumlahTiket = (int)$_POST['jumlah'];
-  $kategori = htmlspecialchars($_POST['kategori']);
+    $nama = htmlspecialchars($_POST['nama']);
+    $tanggal = htmlspecialchars($_POST['tanggal']);
+    $namaKereta = htmlspecialchars($_POST['namaKereta']);
+    $jumlahTiket = (int)$_POST['jumlah'];
+    $kategori = htmlspecialchars($_POST['kategori']);
 
-  $totalHarga = hitungTotalHarga($jumlahTiket, $kategori);
-  $waktuPemesanan = date('Y-m-d H:i:s');
+    // Hitung total harga tiket
+    $totalHarga = hitungTotalHarga($namaKereta, $jumlahTiket);
 
-  if (!isset($_SESSION['data_tiket'])) {
-    $_SESSION['data_tiket'] = [];
-  }
+    // Simpan data ke session
+    $_SESSION['data_tiket'][] = [
+        'nama' => $nama,
+        'tanggal' => $tanggal,
+        'namaKereta' => $namaKereta,
+        'jumlah' => $jumlahTiket,
+        'kategori' => $kategori,
+        'total' => $totalHarga
+    ];
 
-  $_SESSION['data_tiket'][] = [
-    'nama' => $nama,
-    'tanggal' => $tanggal,
-    'namaKereta' => $namaKereta,
-    'jumlah' => $jumlahTiket,
-    'kategori' => $kategori,
-    'total' => $totalHarga,
-    'waktuPemesanan' => $waktuPemesanan
-  ];
+    // Redirect ke halaman tampilan data
+    header("Location: dataPenumpangKereta.php");
+    exit;
 }
 ?>
+
 
 <html>
 
@@ -168,6 +200,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <h4>Total Yang Harus Dibayar</h4>
           <span id="displaybayar">Rp. </span>
         </div>
+
+        <input type="hidden" name="hargaKereta" id="hargaKereta" />
+        <!-- 🟢 penting! Kirim harga satuan ke PHP -->
 
         <!-- Tombol -->
         <div class=" full-width tombol-pesan">

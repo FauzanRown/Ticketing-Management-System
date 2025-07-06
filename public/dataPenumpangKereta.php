@@ -1,5 +1,6 @@
 <?php
 session_start();
+// unset($_SESSION['data_tiket']); // ! KALO MAU MENGHAPUS DATA DARI AWAL PAKE INI
 ?>
 
 <!DOCTYPE html>
@@ -118,14 +119,20 @@ session_start();
           </div>
 
           <div class="ticket-penumpang-row">
+            <div class="ticket-penumpang-detail"><strong>Harga per Tiket :</strong> Rp
+              <?= number_format($tiket['total'] / $tiket['jumlah'], 0, ',', '.') ?></div>
+          </div>
+
+          <div class="ticket-penumpang-row">
             <div class="ticket-penumpang-detail"><strong>Jumlah Tiket :</strong> <?= $tiket['jumlah'] ?></div>
           </div>
 
-          <div class="ticket-penumpang-price">Rp <?= number_format($tiket['total'], 0, ',', '.') ?></div>
+          <div class="ticket-penumpang-price">TOTAL PEMBAYARAN Rp. <?= number_format($tiket['total'], 0, ',', '.') ?>
+          </div>
         </div>
 
         <div class="ticket-penumpang-footer">
-          <div>Silahkan Tunjukan Tiket Ini Kepada Petugas Sebelum Melakukan Perjalanan</div>
+          <div><b>Silahkan Tunjukan Tiket Ini Kepada Petugas Sebelum Melakukan Perjalanan</b></div>
           <div>Terima Kasih Telah Memilih Layanan Jasa PT. Kereta Api Indonesia</div>
         </div>
         <?php endforeach; ?>
@@ -134,6 +141,7 @@ session_start();
         <?php endif; ?>
       </div>
     </div>
+  </div>
 </body>
 
 <script src="../js/dataTicket.js"></script>
