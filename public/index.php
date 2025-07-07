@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-session_start(); // Jangan lupa selalu di paling atas
+session_start(); // Jangan lupa ini harus selalu di paling atas
 
 // Fungsi PHP untuk menghitung total harga berdasarkan nama kereta
 function hitungTotalHarga($namaKereta, $jumlahTiket) {

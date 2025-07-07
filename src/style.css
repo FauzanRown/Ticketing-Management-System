@@ -162,6 +162,14 @@ body {
   display: block;
 }
 
+.content-card-profile {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  display: block;
+}
+
 .card {
   width: 100%;
   max-width: 800px;
@@ -593,22 +601,6 @@ button:active {
   color: #ffffff;
 }
 
-.card-profile-header {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-  padding: 30px;
-  text-align: center;
-  background: linear-gradient(130deg, #1e40af, #3b82f6);
-  color: white;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.card-profile-body {
-  background: var(--light);
-  padding: 30px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
 .developer-social {
   display: flex;
   justify-content: center;
@@ -638,6 +630,24 @@ button:active {
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
 }
 
+.card-profile-body {
+  background: var(--light);
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.card-profile-header {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(130deg, #1e40af, #3b82f6);
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
 .card-profile-information {
   display: flex;
   flex-direction: row;
@@ -647,7 +657,7 @@ button:active {
 }
 
 .information-profile-detail {
-  border: #d8e3fe 1px solid;
+  border: #d8e3fe 3px solid;
   border-radius: 12px;
   width: 500px;
   display: flex;

@@ -69,7 +69,7 @@
     </div>
   </aside>
 
-  <div class="content-card">
+  <div class="content-card-profile">
     <div class="card-profile-header">
       <div class="foto-profile">
         <img src="../image/profile.png" style="width: 140px; border-radius: 50%;" alt="">
