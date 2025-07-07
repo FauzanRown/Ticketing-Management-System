@@ -1,0 +1,14 @@
+# Gunakan image PHP dengan Apache
+FROM php:8.1-apache
+
+# Salin semua file proyek ke direktori kerja Apache
+COPY . /var/www/html/
+
+# Aktifkan mod_rewrite untuk .htaccess jika perlu
+RUN a2enmod rewrite
+
+# Set permission agar semua bisa diakses
+RUN chown -R www-data:www-data /var/www/html
+
+# Port 80 default Apache
+EXPOSE 80

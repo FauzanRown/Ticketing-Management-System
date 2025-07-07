@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ticket-system-php
+    env: docker
+    plan: free
+    region: singapore
+    branch: main
+    dockerfilePath: ./Dockerfile
+    rootDir: .
