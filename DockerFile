@@ -1,15 +1,14 @@
+# Gunakan base image PHP + Apache
 FROM php:8.1-apache
 
-# Aktifkan modul Apache
-RUN a2enmod rewrite
-
-# Copy seluruh isi folder ke dalam container
+# Salin semua isi ke container
 COPY . /var/www/html/
 
-# Set DocumentRoot ke folder public
-RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+# Aktifkan modul rewrite (opsional untuk .htaccess)
+RUN a2enmod rewrite
 
-# Set hak akses
-RUN chown -R www-data:www-data /var/www/html
+# Pindahkan folder public sebagai root dokumen
+WORKDIR /var/www/html/public
 
+# Buka port 80
 EXPOSE 80
