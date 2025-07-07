@@ -29,7 +29,7 @@ function hitungTotal() {
   const harga = dataTiket[namaKereta] || 0;
   const total = harga * jumlah;
 
-  // Tampilkan hanya di layar
+  // Tampilkan  di layar
   document.getElementById("displaybayar").textContent =
     "Rp. " + total.toLocaleString("id-ID");
 }
