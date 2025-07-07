@@ -1,14 +1,16 @@
-# Gunakan base image PHP + Apache
+# Gunakan PHP + Apache
 FROM php:8.1-apache
 
-# Salin semua isi ke container
+# Salin semua file ke dalam container
 COPY . /var/www/html/
 
-# Aktifkan modul rewrite (opsional untuk .htaccess)
+# Aktifkan .htaccess / mod_rewrite jika diperlukan
 RUN a2enmod rewrite
 
-# Pindahkan folder public sebagai root dokumen
+# Set working directory jadi folder public
 WORKDIR /var/www/html/public
 
 # Buka port 80
 EXPOSE 80
+
+#bisa mass
