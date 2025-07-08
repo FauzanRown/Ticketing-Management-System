@@ -121,7 +121,7 @@
             </div>
             <div class="info-text">
               <h4>Project</h4>
-              <p>Project Responsi Praktikum <br> Pemrograman WEB 2025</p>
+              <p>Project Akhir Mata Kuliah <br> Algoritma dan Pemrograman 2025</p>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@
         <div class="foto-profile">
           <img src="profile2.jpg" style="width: 140px; border-radius: 50%;" alt="">
         </div>
-        <h1 style="text-align: center; padding-top: 10px; padding-bottom: 7px;">Muhammad Faizin Albahri</h1>
+        <h1 style="text-align: center; padding-top: 10px; padding-bottom: 7px;">Muhamad Faizin Albahri</h1>
         <p>2400018057 | Teknik Informatika</p>
       </div>
       <div class="card-profile-body">
@@ -230,20 +230,19 @@
             </div>
             <div class="info-text">
               <h4>Project</h4>
-              <p>Project Responsi Praktikum <br> Pemrograman WEB 2025</p>
+              <p>Project Akhir Mata Kuliah <br> Algoritma dan Pemrograman 2025</p>
             </div>
           </div>
         </div>
 
         <div>
-          <p style="text-align: center; padding-bottom: 10px; font-style: italic;">"Barangsiapa Yang bersungguh sungguh
-            pasti akan berhasil"</p>
+          <p style="text-align: center; padding-bottom: 10px; font-style: italic;">"We Win Because We Are Determined. Disciplined. Not Because We Feel Ourselves Superior."</p>
           <h4 style="text-align: center; padding-top: 15px;">IKUTI SOSIAL MEDIA KAMI UNTUK INFO SELENGKAPNYA
           </h4>
         </div>
 
         <div class="developer-social">
-          <a href="https://www.youtube.com/@fauzanrown" target="_blank" class="social-link">
+          <a href="https://www.youtube.com/@kraxy4651" target="_blank" class="social-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill="none" fill-rule="evenodd">
                 <path
@@ -253,7 +252,7 @@
               </g>
             </svg>
           </a>
-          <a href="https://www.instagram.com/zananwar_/" target="_blank" class="social-link">
+          <a href="https://www.instagram.com/myxxinee" target="_blank" class="social-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill="none" fill-rule="evenodd">
                 <path
@@ -263,7 +262,7 @@
               </g>
             </svg>
           </a>
-          <a href="https://github.com/FauzanRown" target="_blank" class="social-link">
+          <a href="https://github.com/Artmzyyy" target="_blank" class="social-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill="none">
                 <path
@@ -273,7 +272,7 @@
               </g>
             </svg>
           </a>
-          <a href="https://www.tiktok.com/id-ID/" target="_blank" class="social-link">
+          <a href="https://www.tiktok.com/@21mti_" target="_blank" class="social-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill="none" fill-rule="evenodd">
                 <path
