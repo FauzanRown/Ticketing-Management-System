@@ -70,44 +70,12 @@
   </aside>
 
   <div class="content-card">
-    <h1 style="text-align: center; color: #ffff; padding-top: 20px">
-      DAFTAR TIKET TERSEDIA
-    </h1>
-    <p style="text-align: center; color: #ffff; padding-bottom: 20px">
-      Tiket Kereta Api Yang Tersedia
-    </p>
-
-    <div style="display: flex; justify-content: center;  margin-top: 30px; margin-bottom: 20px;">
-      <div>
-        <select id="sortOption" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 200px;">
-          <option value="">Urut Berdasarkan</option>
-          <option value="hargaterendah">Harga Terendah</option>
-          <option value="hargatinggi">Harga Tertinggi</option>
-          <option value="namakereta">Nama Kereta</option>
-          <option value="Keberangkatan">Jam Keberangkatan</option>
-        </select>
-        <button id="sortButton"
-          style="margin-left: 10px; padding: 10px 20px; border-radius: 5px; background-color:rgb(255, 255, 255); color: #fff; border: none; cursor: pointer;">
-          Urutkan</button>
-      </div>
-
-      <input type="text" id="searchInput" placeholder="Cari Tiket..."
-        style="margin-left: 20px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 200px;" />
-    </div>
-
-    <!-- <div id="sortStatus" class="sort-status" style="background-color:rgb(0, 0, 0); padding: 10px; border-radius: 5px;">
-      Urutan default: Belum diurutkan
-    </div> -->
-
+    <h1 style="text-align: center ; color: #ffff; padding-top: 20px">DAFTAR TIKET TERSEDIA</h1>
+    <p style="text-align: center ; color: #ffff;">Tiket Kereta Api Yang Tersedia</p>
     <div id="daftartiket" class="ticket-container"></div>
   </div>
 </body>
 
-<<<<<<< HEAD:dataTicket.php
 <script src="dataTicket.js"></script>
-=======
-<script src="../js/filterTicket.js"></script>
-<script src="../js/searchTicket.js"></script>
->>>>>>> a9dcfe1cec3d270b6d1f575e40f42d6b22aee1ac:public/dataTicket.php
 
 </html>
