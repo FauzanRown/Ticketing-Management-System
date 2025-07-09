@@ -23,88 +23,105 @@ const dataTiket = [
 
 const container = document.getElementById("daftartiket");
 
-// Fungsi Bubble Sort
-function bubbleSort(arr, compareFn) {
-  let n = arr.length;
-  let swapped;
-  do {
-    swapped = false;
-    for (let i = 0; i < n - 1; i++) {
-      if (compareFn(arr[i], arr[i + 1])) {
-        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
-        swapped = true;
-      }
-    }
-  } while (swapped);
-}
-
-// Fungsi render tiket
 function renderTickets(data) {
-  container.innerHTML = ""; // Kosongkan dulu
-
+  container.innerHTML = "";
   data.forEach(([kereta, tujuan, jam, harga], index) => {
     const card = document.createElement("div");
     card.className = "ticket-card";
-
     card.innerHTML = `
-          <div class="ticket-header">
-            <div>
-              <h2 class="ticket-title">${kereta}</h2>
-              <p class="ticket-code">Kode Tiket: KA${1000 + index}</p>
-            </div>
-            <span class="ticket-label">Ticket</span>
-          </div>
-
-          <div class="ticket-body">
-            <div class="ticket-row">
-              <span class="ticket-label-left">Tujuan</span>
-              <span class="ticket-value">${tujuan}</span>
-            </div>
-            <div class="ticket-row">
-              <span class="ticket-label-left">Jam Berangkat</span>
-              <span class="ticket-value">${jam}</span>
-            </div>
-            <div class="ticket-row">
-              <span class="ticket-label-left">Harga</span>
-              <span class="ticket-price">Rp ${harga.toLocaleString()}</span>
-            </div>
-          </div>
-
-          <div class="ticket-footer">
-            Ticket Ini Masih Tersedia
-          </div>
-        `;
-
+      <div class="ticket-header">
+        <div>
+          <h2 class="ticket-title">${kereta}</h2>
+          <p class="ticket-code">Kode Tiket: KA${1000 + index}</p>
+        </div>
+        <span class="ticket-label">Ticket</span>
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-row">
+          <span class="ticket-label-left">Tujuan</span>
+          <span class="ticket-value">${tujuan}</span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label-left">Jam Berangkat</span>
+          <span class="ticket-value">${jam}</span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label-left">Harga</span>
+          <span class="ticket-price">Rp ${harga.toLocaleString()}</span>
+        </div>
+      </div>
+      <div class="ticket-footer">
+        Ticket Ini Masih Tersedia
+      </div>
+    `;
     container.appendChild(card);
   });
 }
 
-// Render awal
+function bubbleSortHargaTerendah(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j][3] > arr[j + 1][3]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+}
+
+function bubbleSortHargaTertinggi(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j][3] < arr[j + 1][3]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+}
+
+function bubbleSortNamaKereta(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j][0].toLowerCase() > arr[j + 1][0].toLowerCase()) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+}
+
+function bubbleSortKeberangkatan(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j][2] > arr[j + 1][2]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+}
+
 renderTickets(dataTiket);
 
-// Event tombol sorting
 document.getElementById("sortButton").addEventListener("click", () => {
   const option = document.getElementById("sortOption").value;
-
-  // Copy array
   const sortedData = [...dataTiket];
 
   switch (option) {
     case "hargaterendah":
-      bubbleSort(sortedData, (a, b) => a[3] > b[3]);
+      bubbleSortHargaTerendah(sortedData);
       break;
     case "hargatinggi":
-      bubbleSort(sortedData, (a, b) => a[3] < b[3]);
+      bubbleSortHargaTertinggi(sortedData);
       break;
     case "namakereta":
-      bubbleSort(sortedData, (a, b) => a[0].toLowerCase() > b[0].toLowerCase());
+      bubbleSortNamaKereta(sortedData);
       break;
     case "Keberangkatan":
-      bubbleSort(sortedData, (a, b) => a[2] > b[2]);
+      bubbleSortKeberangkatan(sortedData);
       break;
   }
 
   renderTickets(sortedData);
 });
-
-// Event
