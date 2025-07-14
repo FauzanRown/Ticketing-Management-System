@@ -79,10 +79,24 @@ session_start();
       <h1 class="card-penumpang-title">DATA PEMBELIAN TIKET KERETA API</h1>
       <p style="text-align: center; color: white; padding-bottom: 28px;">Data Penumpang Yang Sudah Membeli Tiket</p>
 
+
+      <div style="text-align: center; margin-bottom: 20px;">
+        <input type="text" id="searchDataPenumpang" placeholder="Cari nama penumpang terdaftar..." style="
+      padding: 10px 16px;
+      width: 60%;
+      max-width: 800px;
+      font-size: 16px;
+      border: 2px solid #1e40af;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease;" />
+      </div>
+
       <?php if (!empty($_SESSION['data_tiket'])): ?>
       <?php foreach ($_SESSION['data_tiket'] as $index => $tiket): ?>
 
-      <div class="display-ticket">
+      <div class="display-ticket tiket-item">
         <div class="ticket-penumpang-header">
           <div>
             <div class="ticket-penumpang-title"><?= $tiket['namaKereta'] ?></div>
@@ -145,5 +159,6 @@ session_start();
 </body>
 
 <script src="dataTicket.js"></script>
+<script src="searchPenumpang.js"></script>
 
 </html>
