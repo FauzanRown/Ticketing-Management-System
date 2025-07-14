@@ -122,7 +122,8 @@ session_start();
 
           <div class="ticket-penumpang-row">
             <div class="ticket-penumpang-detail">
-              <strong>Nama Penumpang :</strong> <?= $tiket['nama'] ?>
+              <strong>Nama Penumpang :</strong>
+              <span class="nama-penumpang"><?= $tiket['nama'] ?></span>
             </div>
           </div>
 
@@ -133,15 +134,20 @@ session_start();
           </div>
 
           <div class="ticket-penumpang-row">
-            <div class="ticket-penumpang-detail"><strong>Harga per Tiket :</strong> Rp
-              <?= number_format($tiket['total'] / $tiket['jumlah'], 0, ',', '.') ?></div>
+            <div class="ticket-penumpang-detail">
+              <strong>Harga per Tiket :</strong> Rp
+              <?= number_format($tiket['total'] / $tiket['jumlah'], 0, ',', '.') ?>
+            </div>
           </div>
 
           <div class="ticket-penumpang-row">
-            <div class="ticket-penumpang-detail"><strong>Jumlah Tiket :</strong> <?= $tiket['jumlah'] ?></div>
+            <div class="ticket-penumpang-detail">
+              <strong>Jumlah Tiket :</strong> <?= $tiket['jumlah'] ?>
+            </div>
           </div>
 
-          <div class="ticket-penumpang-price">TOTAL PEMBAYARAN Rp. <?= number_format($tiket['total'], 0, ',', '.') ?>
+          <div class="ticket-penumpang-price">
+            TOTAL PEMBAYARAN Rp. <?= number_format($tiket['total'], 0, ',', '.') ?>
           </div>
         </div>
 
