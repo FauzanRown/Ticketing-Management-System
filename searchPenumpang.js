@@ -1,13 +1,19 @@
-document
-  .getElementById("searchDataPenumpang")
-  .addEventListener("input", function () {
+document.addEventListener("DOMContentLoaded", function () {
+  const inputSearch = document.getElementById("searchDataPenumpang");
+  const tiketItems = document.querySelectorAll(".tiket-item");
+
+  inputSearch.addEventListener("input", function () {
     const keyword = this.value.toLowerCase();
-    const tiketItems = document.querySelectorAll(".tiket-item");
 
     tiketItems.forEach((item) => {
-      const namaElement = item.querySelector(".nama-penumpang");
-      const nama = namaElement ? namaElement.textContent.toLowerCase() : "";
+      const nama =
+        item.querySelector(".nama-penumpang")?.textContent.toLowerCase() || "";
 
-      item.style.display = nama.includes(keyword) ? "block" : "none";
+      if (nama.includes(keyword)) {
+        item.style.removeProperty("display"); // 🟢 Kembalikan ke style asal
+      } else {
+        item.style.display = "none"; // 🔴 Sembunyikan yang tidak cocok
+      }
     });
   });
+});

@@ -361,6 +361,13 @@ button:active {
   padding: 20px;
 }
 
+.tiket-item {
+  margin-bottom: 20px;
+  /* Misalnya kamu ingin pakai flex layout nanti */
+  display: flex;
+  flex-direction: column;
+}
+
 .ticket-card {
   background-color: #fff;
   border: 1px solid #ddd;
