@@ -68,7 +68,7 @@ function bubbleSortHargaTerendah(arr) {
     }
   }
 }
-
+// destructuring assignment
 function bubbleSortHargaTertinggi(arr) {
   let n = arr.length;
   for (let i = 0; i < n - 1; i++) {
@@ -106,7 +106,7 @@ renderTickets(dataTiket);
 
 document.getElementById("sortButton").addEventListener("click", () => {
   const option = document.getElementById("sortOption").value;
-  const sortedData = [...dataTiket];
+  const sortedData = [...dataTiket]; // spread
 
   switch (option) {
     case "hargaterendah":
@@ -125,3 +125,8 @@ document.getElementById("sortButton").addEventListener("click", () => {
 
   renderTickets(sortedData);
 });
+
+// ! Tanpa Destructurning
+// let temp = arr[j];
+// arr[j] = arr[j + 1];
+// arr[j + 1] = temp;
