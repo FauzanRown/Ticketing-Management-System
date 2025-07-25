@@ -3,8 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const tiketItems = document.querySelectorAll(".tiket-item");
 
   inputSearch.addEventListener("input", function () {
+    const keyword = this.value.toLowerCase();
+
     tiketItems.forEach((item) => {
-      item.querySelector(".nama-penumpang")?.textContent.toLowerCase() || "";
+      const nama =
+        item.querySelector(".nama-penumpang")?.textContent.toLowerCase() || "";
+
+      if (nama.includes(keyword)) {
+        item.style.removeProperty("display"); // 🟢 Kembalikan ke style asal
+      } else {
+        item.style.display = "none"; // 🔴 Sembunyikan yang tidak cocok
+      }
     });
   });
 });
