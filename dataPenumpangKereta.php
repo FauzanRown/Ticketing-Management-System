@@ -178,7 +178,7 @@ inputSearch.addEventListener("input", function() {
   tiketItems.forEach((item) => {
     const nama =
       item.querySelector(".nama-penumpang")?.textContent.toLowerCase() || "";
-    if (nama.includes(keyword)) {
+    if (nama.includes(keyword)) { // apakah keyword ada di dalam string nama
       item.style.display = "block";
     } else {
       item.style.display = "none";
