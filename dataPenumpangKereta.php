@@ -11,6 +11,8 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blibli Tiket</title>
   <link rel="stylesheet" href="style.css" />
+
+
 </head>
 
 <body class="main-body">
@@ -166,7 +168,7 @@ session_start();
   </div>
 </body>
 
-<script src="dataTicket.js"></script>
 <script src="searchPenumpang.js"></script>
+
 
 </html>

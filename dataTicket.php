@@ -103,7 +103,7 @@
   </div>
 </body>
 
-<script src="filterTicket.js"></script>
+<script src="SortTicket.js"></script>
 <script src="searchTicket.js"></script>
 
 </html>
